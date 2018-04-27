@@ -6,6 +6,8 @@ web videocall proxy代理服务器包括nginx服务器和turnserver中转服务�
 
 nginx是一个开源的第三方代理服务器，只需执行简单的安装命令即可。
 
+（部署前要确保你申请了域名和证书）
+
 centOS和Ubuntu下安装教程：https://jingyan.baidu.com/article/bad08e1ec2adc709c85121aa.html
 
 安装完成之后，需要配置nginx的conf。具体步骤：
