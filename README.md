@@ -19,10 +19,10 @@ centOS和Ubuntu下安装教程：https://jingyan.baidu.com/article/bad08e1ec2adc
         server {
                 listen  80;
                 listen  443;
-                server_name <you dns>;
+                server_name <your dns>;
                 ssl     on;
-                ssl_certificate         <you certificate file absolute path>;
-                ssl_certificate_key     <you certificate key file absolute path>;
+                ssl_certificate         <your certificate file absolute path>;
+                ssl_certificate_key     <your certificate key file absolute path>;
                 location /cs/ {
                         proxy_pass https://$arg_h:$arg_p/$arg_d;
                 }
