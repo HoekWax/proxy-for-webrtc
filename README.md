@@ -1,16 +1,16 @@
-# proxy-for-webrtc
+# proxy-for-webSDK 
 
 web videocall proxy代理服务器包括nginx服务器和turnserver中转服务器。下面依次介绍它们的部署流程。
 
-1、nginx代理服务器
+1、Nginx代理服务器
 
-nginx是一个开源的第三方代理服务器，只需执行简单的安装命令即可。
+Nginx是一个开源的第三方代理服务器，只需执行简单的安装命令即可。
 
 （部署前要确保你申请了域名和证书）
 
-centOS和Ubuntu下安装教程：https://jingyan.baidu.com/article/bad08e1ec2adc709c85121aa.html
+CentOS和Ubuntu下可以参考第三方安装教程：https://jingyan.baidu.com/article/bad08e1ec2adc709c85121aa.html
 
-安装完成之后，需要配置nginx的conf。具体步骤：
+安装完成之后，需要配置Nginx的conf文件。具体步骤如下：
 
     1.sudo vim /etc/nginx/nginx.conf 
     
@@ -40,26 +40,23 @@ centOS和Ubuntu下安装教程：https://jingyan.baidu.com/article/bad08e1ec2adc
     3.sudo nginx -s reload
 
 
-2、turnserver部署
+2、Turnserver部署
 
-在turnserver运行包中有四个文件：README，turnserver（执行文件），turnserver.conf，turnserver.sh
+在Turnserver运行包中有四个文件：README，turnserver（执行文件），turnserver.conf，turnserver.sh
 
 README文件，详细指导运行turnserver的步骤：
 
-#This is a guideline
 
-#to show you how to run turnserver.
-
-first. you need to set some parameters into turnserver.sh.
+First, you need to set some parameters into turnserver.sh.
 
         extIP: external IP address
         udpport: the binding port of udp socket. default "3478"
         tcpport: the binding port of tcp socket. default "3433"
         realm: a symbol of your company. For example "agora.io"
-then. you need to create some users and write them to turnserver.conf.
+After that, you need to create some users and write them to turnserver.conf.
 
         the format in turnserver.conf is: 'username=key'.
         you can generate the key by 'echo -n "<username>:<realm>:<password>" | md5sum'.
-finally. you can run the turnserver by turnserver.sh.
+Finally, you can run the turnserver by turnserver.sh.
 
         usage: ./turnserver.sh [start/stop]
